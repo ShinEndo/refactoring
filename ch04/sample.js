@@ -51,6 +51,9 @@ class Province {
   get shortfall() {
     return this._demand - this._totalProduction;
   }
+  get profit() {
+    return this.demandValue - this.demandCost;
+  }
 }
 
 class Producer {
