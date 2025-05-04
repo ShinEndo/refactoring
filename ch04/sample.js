@@ -66,6 +66,9 @@ class Province {
       });
     return result;
   }
+  get demandValue() {
+    return this.satisfiedDemand * this.price;
+  }
 }
 
 class Producer {
