@@ -1,9 +1,10 @@
-const assert = require("assert");
+const chai = require("chai");
 const { sampleProvinceData, Province } = require("./../ch04/sample");
 
+const expect = chai.expect;
 describe("province", function () {
   it("shortfall", function () {
     const asia = new Province(sampleProvinceData());
-    assert.equal(asia.shortfall, 5);
+    expect(asia.shortfall).equal(5);
   });
 });
