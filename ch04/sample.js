@@ -69,6 +69,9 @@ class Province {
   get demandValue() {
     return this.satisfiedDemand * this.price;
   }
+  get satisfiedDemand() {
+    return Math.min(this._demand, this.totalProduction);
+  }
 }
 
 class Producer {
