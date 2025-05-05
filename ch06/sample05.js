@@ -6,17 +6,18 @@ export default function priceOrder(product, quantity, shippingMethod) {
     product.discountRate;
   const priceData = {
     basePrice: basePrice,
+    quantity: quantity,
   };
-  const price = applyShipping(priceData, shippingMethod, quantity, discount);
+  const price = applyShipping(priceData, shippingMethod, discount);
 
   return price;
 }
-function applyShipping(priceData, shippingMethod, quantity, discount) {
+function applyShipping(priceData, shippingMethod, discount) {
   const shippingPerCase =
     priceData.basePrice > shippingMethod.discountThreshold
       ? shippingMethod.discountedFee
       : shippingMethod.freePerCase;
-  const shippingCost = quantity * shippingPerCase;
+  const shippingCost = priceData.quantity * shippingPerCase;
   const price = priceData.basePrice - discount + shippingCost;
   return price;
 }
