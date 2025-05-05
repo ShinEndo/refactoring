@@ -1,6 +1,6 @@
 const chai = require("chai");
 const { beforeEach } = require("mocha");
-const { sampleProvinceData, Province } = require("./../ch04/sample");
+const { sampleProvinceData, Province } = require("../../ch04/sample");
 
 const expect = chai.expect;
 describe("province", function () {
