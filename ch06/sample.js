@@ -17,17 +17,17 @@ function printOwing(invoice) {
   );
 
   // print details
-  printDetails();
+  printDetails(invoice, outstanding);
 
   function printBanner() {
     console.log("********************");
     console.log("*** Custmer Owes ***");
     console.log("********************");
   }
+}
 
-  function printDetails() {
-    console.log(`name: ${invoice.customer}`);
-    console.log(`amount: ${outstanding}`);
-    console.log(`due: ${invoice.dueDate.toLocaleDateString()}`);
-  }
+function printDetails(invoice, outstanding) {
+  console.log(`name: ${invoice.customer}`);
+  console.log(`amount: ${outstanding}`);
+  console.log(`due: ${invoice.dueDate.toLocaleDateString()}`);
 }
