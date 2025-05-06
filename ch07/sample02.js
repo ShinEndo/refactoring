@@ -5,6 +5,9 @@ export default class Order {
   priorityString() {
     return this._priority.toString();
   }
+  get priority() {
+    return this._priority;
+  }
   set priority(aString) {
     this._priority = new Priority(aString);
   }
