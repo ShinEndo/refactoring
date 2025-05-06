@@ -4,8 +4,7 @@ export default class Order {
     this._item = item;
   }
   get price() {
-    const discountFactor = this.discountFactor;
-    return this.basePrice * discountFactor;
+    return this.basePrice * this.discountFactor;
   }
   get basePrice() {
     return this._quantity * this._item.price;
