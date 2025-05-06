@@ -26,7 +26,7 @@ describe("ch07 オブジェクトによるプリミティブの置き換え", fu
     ];
     const orders = datas.map((data) => new Order(data));
     const highPriorityCount = orders.filter(
-      (o) => "high" === o.priority || "rush" === o.priority
+      (o) => "high" === o.priorityString() || "rush" === o.priorityString()
     ).length;
     expect(highPriorityCount).equal(4);
   });

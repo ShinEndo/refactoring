@@ -2,10 +2,19 @@ export default class Order {
   constructor(data) {
     this.priority = data.priority;
   }
-  get priority() {
-    return this.priority;
+  priorityString() {
+    return this._priority.toString();
   }
   set priority(aString) {
-    this.priority = aString;
+    this._priority = new Priority(aString);
+  }
+}
+
+class Priority {
+  constructor(value) {
+    this._value = value;
+  }
+  toString() {
+    return this._value;
   }
 }
