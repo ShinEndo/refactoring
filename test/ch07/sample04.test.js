@@ -7,8 +7,8 @@ describe("ch07 クラスのインライン化", function () {
     const shipment = new Shipment();
     shipment.shippingCompany = 'Amazon';
     shipment.trackingNumber = '00-0000-0000';
-    expect(shipment.trackingInformation.shippingCompany).equal('Amazon');
-    expect(shipment.trackingInformation.trackingNumber).equal('00-0000-0000');
-    expect(shipment.trackingInformation.display).equal('Amazon: 00-0000-0000');
+    expect(shipment.shippingCompany).equal('Amazon');
+    expect(shipment.trackingNumber).equal('00-0000-0000');
+    expect(shipment.trackingInfo).equal('Amazon: 00-0000-0000');
   });
 });
