@@ -1,7 +1,9 @@
 export function acquireData(input) {
 	const lines = input.split("\n");
 	const result = [];
-	const loopItem = lines.slice(1).filter(line => line.trim() !== '');
+	const loopItem = lines
+		.slice(1)
+		.filter(line => line.trim() !== '');
 	for(const line of loopItem) {
 		const record = line.split(",");
 		if(record[1].trim() === "India") {
