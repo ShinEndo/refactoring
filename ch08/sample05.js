@@ -2,19 +2,25 @@ function renderPerson(outStream, person) {
 	const result = [];
 	result.push(`<p>${person.name}</p>`);
 	result.push(renderPhoto(person.photo));
-	result.push(`<p>title: ${person.photo.title}</p>`);
-	result.push(emitPhotoData(person.photo));
+	result.push(zznew(person.photo));
 	return result.join("\n");
 }
 
 function photoDiv(p) {
 	return [
 		"<div>",
-		`<p>title: ${p.title}</p>`,
-		emitPhotoData(p),
+		zznew(p),
 		"</div>",
 	].join("\n");
 }
+
+function zznew(p) {
+	return [
+		`<p>title: ${p.title}</p>`,
+		emitPhotoData(p),
+	]
+}
+
 
 function emitPhotoData(aPhoto) {
 	const result = [];
