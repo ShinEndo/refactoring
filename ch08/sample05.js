@@ -17,14 +17,7 @@ function photoDiv(p) {
 function zznew(p) {
 	return [
 		`<p>title: ${p.title}</p>`,
-		emitPhotoData(p),
+		`<p>location: ${p.location}</p>`,
+		`<p>date: ${p.toDateString()}</p>`,
 	]
-}
-
-
-function emitPhotoData(aPhoto) {
-	const result = [];
-	result.push(`<p>location: ${aPhoto.location}</p>`);
-	result.push(`<p>date: ${aPhoto.toDateString()}</p>`);
-	return result.join("\n");
 }
