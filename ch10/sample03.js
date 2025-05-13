@@ -14,6 +14,19 @@ function airSpeedVelocity(bird) {
   return new Bird(bird).airSpeedVelocity;
 }
 
+function createBird(bird) {
+  switch(this.type) {
+    case 'EuropeanSwallow':
+      return new EuropeanSwallow(bird);
+    case 'AfricanSwallow':
+      return AfricanSwallow(bird);
+    case 'NorwegianBlueParrot':
+      return new NorwegianBlueParrot(bird);
+    default:
+      return new Bird(bird);
+  } 
+}
+
 
 class Bird {
   constructor(birdObject) {
@@ -46,3 +59,9 @@ class Bird {
     }
   }
 }
+
+class EuropeanSwallow extends Bird {}
+
+class AfricanSwallow extends Bird{}
+
+class NorwegianBlueParrot extends Bird{}
