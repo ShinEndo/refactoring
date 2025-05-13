@@ -10,14 +10,6 @@ function speeds(birds) {
                 .map(bird => [bird.name, bird.airSpeedVelocity]));
 }
 
-function plumage(bird) {
-  return createBird(bird).plumage;
-}
-
-function airSpeedVelocity(bird) {
-  return createBird(bird).airSpeedVelocity;
-}
-
 function createBird(bird) {
   switch(this.type) {
     case 'EuropeanSwallow':
