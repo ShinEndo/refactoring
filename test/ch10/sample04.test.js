@@ -3,7 +3,7 @@ const { rating } = require("../../ch10/sample04");
 
 const expect = chai.expect;
 describe("ch10 ポリモーフィズムによる条件記述の置き換え", function () {
-  it("rating", function () {
+  it("rating - B", function () {
     const voyage = { zone: "west-indies", length: 10 };
     const history = [
       { zone: "east-indies", profit: 5 },
@@ -12,5 +12,15 @@ describe("ch10 ポリモーフィズムによる条件記述の置き換え", fu
       { zone: "west-africa", profit: 7 },
     ];
     expect(rating(voyage, history)).equal("B");
+  });
+  it("rating - A", function () {
+    const voyage = { zone: "china", length: 2 };
+    const history = [
+      { zone: "east-indies", profit: 5 },
+      { zone: "west-indies", profit: 15 },
+      { zone: "china", profit: -2 },
+      { zone: "west-africa", profit: 7 },
+    ];
+    expect(rating(voyage, history)).equal("A");
   });
 });
