@@ -2,7 +2,7 @@ export function rating(voyage, history) {
   return new Rating(voyage, history).value;
 }
 
-function createRating(viyage, history) {
+function createRating(voyage, history) {
   if (voyage.zone === "china" && history.some((v) => "china" === v.zone)) return new ExperiencedChinaRating(voyage, history);
   else return new Rating(voyage, history);
 }
