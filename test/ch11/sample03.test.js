@@ -20,6 +20,6 @@ describe("ch11 オブジェクトそのものの受け渡し", function () {
     const aRoom = {daysTempRange: {low: 18, high: 25}};
     const low = aRoom.daysTempRange.low;
     const high = aRoom.daysTempRange.high;
-    expect(aPlan.withinRange(low,high)).equal(false);
+    expect(aPlan.xxNEWwithinRange(aRoom.daysTempRange)).equal(false);
   });
 });
