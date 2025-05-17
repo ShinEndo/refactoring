@@ -1,5 +1,5 @@
 const chai = require("chai");
-const { deliveryDate, rushDeliveryDate, regularDeliveryDate } = require("../../ch11/sample02");
+const { rushDeliveryDate, regularDeliveryDate } = require("../../ch11/sample02");
 
 const expect = chai.expect;
 describe("ch11 フラグパラメータの削除", function () {
@@ -16,14 +16,14 @@ describe("ch11 フラグパラメータの削除", function () {
     };
   });
   it("deliveryDate - isRush = true", function () {
-    const isRush = true;
+    // deliveryDate(anOrder,true) → rushDeliveryDate(anOrder)
     expect(rushDeliveryDate(anOrder)).equal(1);
 
     anOrder.deliveryState = "";
     expect(rushDeliveryDate(anOrder)).equal(1);
   });
   it("deliveryDate - isRush = false", function () {
-    const isRush = false;
+    // deliveryDate(anOrder,false) → regularDeliveryDate(anOrder)
     expect(regularDeliveryDate(anOrder)).equal(2);
 
     anOrder.deliveryState = "";
