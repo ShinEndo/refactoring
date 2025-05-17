@@ -13,7 +13,7 @@ describe("ch11 オブジェクトそのものの受け渡し", function () {
     const aRoom = {daysTempRange: {low: 22, high: 24}};
     const low = aRoom.daysTempRange.low;
     const high = aRoom.daysTempRange.high;
-    expect(aPlan.withinRange(low,high)).equal(true);
+    expect(aPlan.xxNEWwithinRange(aRoom.daysTempRange)).equal(true);
   });
 
   it("withinRange - False", function () {
