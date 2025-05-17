@@ -9,7 +9,7 @@ class Scorer {
 		this._scoringGuide = scoringGuide;
 	}
 	execute(scoringGuide) {
-		let result = 0;
+		this._result = 0;
 		let healthLevel = 0;
 		let highMedicalRiskFlag = false;
 	
@@ -20,9 +20,9 @@ class Scorer {
 		let certificationGrade = "regular";
 		if(this._scoringGuide.stateWithCertification(this._canditate.originState)) {
 			certificationGrade = 'low';
-			result -= 5;
+			this._result -= 5;
 		}
-		result -= Math.max(healthLevel -5 , 0);
-		return result;
+		this._result -= Math.max(healthLevel -5 , 0);
+		return this._result;
 	}
 }
