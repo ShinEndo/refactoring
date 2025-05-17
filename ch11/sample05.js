@@ -1,17 +1,18 @@
 function score(canditate,medicalExam,scoringGuide) {
-	return new Scorer(canditate).execute(medicalExam,scoringGuide);
+	return new Scorer(canditate,medicalExam).execute(scoringGuide);
 }
 
 class Scorer {
-	constructor(canditate) {
+	constructor(canditate,medicalExam) {
 		this._canditate = canditate;
+		this._medicalExam = medicalExam;
 	}
-	execute(medicalExam,scoringGuide) {
+	execute(scoringGuide) {
 		let result = 0;
 		let healthLevel = 0;
 		let highMedicalRiskFlag = false;
 	
-		if(medicalExam.isSmoker) {
+		if(this._medicalExam.isSmoker) {
 			healthLevel += 10;
 			highMedicalRiskFlag = true;
 		}
