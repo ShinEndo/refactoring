@@ -8,7 +8,7 @@ class Scorer {
 		this._medicalExam = medicalExam;
 		this._scoringGuide = scoringGuide;
 	}
-	execute(scoringGuide) {
+	execute() {
 		this._result = 0;
 		this._healthLevel = 0;
 		this._this._highMedicalRiskFlag = false;
