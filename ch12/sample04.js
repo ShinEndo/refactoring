@@ -3,6 +3,9 @@ export class Booking {
 		this._show = show;
 		this._date = date;
 	}
+	_bePremium(extras) {
+		this._premiumDelegate = new PremiumBookingDelegate(this, extras);
+	}
 	get hasTalkBack() {
 		return (this._premiumDelegate) ? this._premiumDelegate.hasTalkBack : this._show.hasOwnProperty('talkback') && !this.isPeakDay;
 	}
@@ -20,9 +23,6 @@ export class PremiumBooking extends Booking {
 	constructor(show,date,extras) {
 		super(show, date);
 		this._extras = extras;
-	}
-	_bePremium(extras) {
-		this._premiumDelegate = new PremiumBookingDelegate(this, extras);
 	}
 }
 
