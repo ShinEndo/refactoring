@@ -4,7 +4,7 @@ export class Booking {
 		this._date = date;
 	}
 	get hasTalkBack() {
-		return this._show.hasOwnProperty('talkback') && !this.isPeakDay;
+		return (this._premiumDelegate) ? this._premiumDelegate.hasTalkBack : this._show.hasOwnProperty('talkback') && !this.isPeakDay;
 	}
 	get basePrice() {
 		let result = this._show.price;
@@ -20,9 +20,6 @@ export class PremiumBooking extends Booking {
 	}
 	_bePremium(extras) {
 		this._premiumDelegate = new PremiumBookingDelegate(this, extras);
-	}
-	get hasTalkBack() {
-		return this._premiumDelegate.hasTalkBack;
 	}
 	get basePrice() {
 		return Math.round(super.basePrice + this._extras.premiumFee)
