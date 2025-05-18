@@ -5,10 +5,8 @@ const expect = chai.expect;
 describe("ch12 サブクラスによるタイプコードの置き換え", function () {
 
   it("Employee - engineer", function () {
-    const employee = new Employee('taro','engineer');
+    const employee = createEmployee('taro','engineer');
     expect(employee.toString()).equal('taro (engineer)');
-    const xxNewEmployee = createEmployee('jiro','engineer');
-    expect(xxNewEmployee.toString()).equal('jiro (engineer)');
   });
   it("Employee - manager", function () {
     const employee = new Employee('taro','manager');
