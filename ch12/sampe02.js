@@ -2,9 +2,6 @@ export class Employee {
 	constructor(name, type) {
 		this._name = name;
 	}
-	validateType(arg) {
-		if(!["engineer","manager","salesman"].includes(arg)) throw new Error(`従業員のタイプコードが不正：${arg}`);
-	}
 	toString() {
 		return `${this._name} (${this.type})`;
 	}
