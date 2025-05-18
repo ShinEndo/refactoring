@@ -60,20 +60,6 @@ class AfricanSwallowDelegate extends SpeciesDelegate {
 	}
 }
 
-class NorweigianBlueParrot extends Bird {
-	constructor(data) {
-		super(data);
-		this._voltage = data.voltage;
-		this._isNailed = data.isNailed;
-	}
-	get plumage() {
-		return this._speciesDeligate.plumage;
-	}
-	get airSpeedVelocity() {
-		return this._speciesDeligate.airSpeedVelocity;
-	}
-}
-
 class NorweigianBlueParrotDelegate extends SpeciesDelegate {
 	constructor(data,bird) {
 		super(data,bird)
