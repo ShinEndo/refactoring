@@ -14,7 +14,7 @@ export class Employee {
 		return this._type;
 	}
 	set type(arg) {
-		this._type = arg;
+		this._type = Employee.createEmployeeType(arg);
 	}
 	get capitalizedType() {
 		return this.typeString.charAt(0).toUpperCase() + this.typeString.substr(1).toLowerCase();
@@ -22,6 +22,15 @@ export class Employee {
 	toString() {
 		return `${this._name} (${this.capitalizedType})`;
 	}
+	static createEmployeeType(aString) {
+		switch(aString) {
+			case "enginner": return new Engineer();
+			case "manager": return new Manager();
+			case "salesman": return new Salesman();
+			default: throw new Error(`従業員のタイプコードが不正：${aString}`);
+		}
+	}
+
 }
 
 class EmployeeType {
@@ -32,3 +41,16 @@ class EmployeeType {
 		return this._value;
 	}
 }
+
+class Engineer extends EmployeeType {
+	toString() { return "engineer"; }
+}
+
+class Manager extends EmployeeType {
+	toString() { return "manager"; }
+}
+
+class Salesman extends EmployeeType {
+	toString() { return "salesman"; }
+}
+
