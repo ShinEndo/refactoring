@@ -19,13 +19,6 @@ export class Booking {
 	}
 }
 
-export class PremiumBooking extends Booking {
-	constructor(show,date,extras) {
-		super(show, date);
-		this._extras = extras;
-	}
-}
-
 export class PremiumBookingDelegate {
 	constructor(hostBooking,extras) {
 		this._host = hostBooking;
