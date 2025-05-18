@@ -20,7 +20,7 @@ class Bird {
 		return this._speciesDeligate.plumage;
 	}
 	get airSpeedVelocity() {
-		return this._speciesDeligate ? this._speciesDeligate.airSpeedVelocity : null;
+		return this._speciesDeligate.airSpeedVelocity
 	}
 
 	selectSpeciesDelegate(data) {
