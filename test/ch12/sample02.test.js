@@ -1,5 +1,5 @@
 const chai = require("chai");
-const { Employee, createEmployee } = require("../../ch12/sampe02");
+const { Employee, createEmployee } = require("../../ch12/sample02");
 
 const expect = chai.expect;
 describe("ch12 サブクラスによるタイプコードの置き換え", function () {
