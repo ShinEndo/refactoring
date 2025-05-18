@@ -9,7 +9,7 @@ describe("ch12 サブクラスによるタイプコードの置き換え", funct
     expect(employee.toString()).equal('taro (engineer)');
   });
   it("Employee - manager", function () {
-    const employee = new Employee('taro','manager');
+    const employee = createEmployee('taro','manager');
     expect(employee.toString()).equal('taro (manager)');
   });
   it("Employee - salesman", function () {
