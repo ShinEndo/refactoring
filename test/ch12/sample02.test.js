@@ -17,6 +17,6 @@ describe("ch12 サブクラスによるタイプコードの置き換え", funct
     expect(employee.toString()).equal('taro (salesman)');
   });
   it("Employee - part-time", function () {
-    expect(function(){ new Employee('taro','part-time'); }).to.throw(Error, '従業員のタイプコードが不正：part-time');
+    expect(function(){ createEmployee('taro','part-time'); }).to.throw(Error, '従業員のタイプコードが不正：part-time');
   });
 });

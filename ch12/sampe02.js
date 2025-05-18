@@ -1,6 +1,5 @@
 export class Employee {
 	constructor(name, type) {
-		this.validateType(type);
 		this._name = name;
 	}
 	validateType(arg) {
@@ -34,6 +33,6 @@ export function createEmployee(name,type) {
 		case "engineer": return new Engineer(name,type);
 		case "manager": return new Manager(name,type);
 		case "salesman": return new Salesman(name,type);
+		default: throw new Error(`従業員のタイプコードが不正：${type}`);
 	} 
-	return new Employee(name,type);
 }
