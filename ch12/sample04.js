@@ -11,6 +11,9 @@ export class Booking {
 		if(this.isPeakDay) result += Math.round(result * 0.15);
 		return (this._premiumDelegate) ? this._premiumDelegate.extendBasePrice(result) : result;
 	}
+	get hasDinner() {
+		return (this._premiumDelegate) ? this._premiumDelegate.hasDinner : undefined;
+	}
 }
 
 export class PremiumBooking extends Booking {
@@ -20,9 +23,6 @@ export class PremiumBooking extends Booking {
 	}
 	_bePremium(extras) {
 		this._premiumDelegate = new PremiumBookingDelegate(this, extras);
-	}
-	get hasDinner() {
-		return this._extras.hasOwnProperty('dinner') && !this.isPeakDay;
 	}
 }
 
@@ -37,6 +37,9 @@ export class PremiumBookingDelegate {
 	extendBasePrice(base) {
 		return Math.round(base + this._extras.premiumFee)		
 	} 
+	get hasDinner() {
+		return this._extras.hasOwnProperty('dinner') && !this._host.isPeakDay;
+	}
 }
 
 export function createBooking(show,date) {
