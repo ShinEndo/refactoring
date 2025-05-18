@@ -22,7 +22,7 @@ export class PremiumBooking extends Booking {
 		this._premiumDelegate = new PremiumBookingDelegate(this, extras);
 	}
 	get hasTalkBack() {
-		return this._show.hasOwnProperty('talkback');
+		return this._premiumDelegate.hasTalkBack;
 	}
 	get basePrice() {
 		return Math.round(super.basePrice + this._extras.premiumFee)
@@ -36,6 +36,9 @@ export class PremiumBookingDelegate {
 	constructor(hostBooking,extras) {
 		this._host = hostBooking;
 		this._extras = extras;
+	}
+	get hasTalkBack() {
+		return this._host._show.hasOwnProperty('talkback');
 	}
 }
 
