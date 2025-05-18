@@ -18,6 +18,9 @@ export class PremiumBooking extends Booking {
 		super(show, date);
 		this._extras = extras;
 	}
+	_bePremium(extras) {
+		this._premiumDelegate = new PremiumBookingDelegate(this, extras);
+	}
 	get hasTalkBack() {
 		return this._show.hasOwnProperty('talkback');
 	}
@@ -29,10 +32,19 @@ export class PremiumBooking extends Booking {
 	}
 }
 
+export class PremiumBookingDelegate {
+	constructor(hostBooking,extras) {
+		this._host = hostBooking;
+		this._extras = extras;
+	}
+}
+
 export function createBooking(show,date) {
 	return new Booking(show,date);
 }
 
 export function createPremiumBooking(show,date,extras) {
-	return new PremiumBooking(show,date,extras);
+	const result = new PremiumBooking(show,date,extras);
+	result._bePremium(extras);
+	return result;
 }
