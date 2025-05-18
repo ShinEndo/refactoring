@@ -1,5 +1,5 @@
 const chai = require("chai");
-const { Employee } = require("../../ch12/sampe02");
+const { Employee, createEmployee } = require("../../ch12/sampe02");
 
 const expect = chai.expect;
 describe("ch12 サブクラスによるタイプコードの置き換え", function () {
@@ -7,6 +7,8 @@ describe("ch12 サブクラスによるタイプコードの置き換え", funct
   it("Employee - engineer", function () {
     const employee = new Employee('taro','engineer');
     expect(employee.toString()).equal('taro (engineer)');
+    const xxNewEmployee = createEmployee('jiro','engineer');
+    expect(xxNewEmployee.toString()).equal('jiro (engineer)');
   });
   it("Employee - manager", function () {
     const employee = new Employee('taro','manager');

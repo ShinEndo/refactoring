@@ -14,3 +14,16 @@ export class Employee {
 		return `${this._name} (${this.type})`;
 	}
 }
+
+class Engineer extends Employee {
+	get type() {
+		return "engineer";
+	}
+}
+
+export function createEmployee(name,type) {
+	switch (type) {
+		case "engineer": return new Engineer(name,type);
+	} 
+	return new Employee(name,type);
+}
