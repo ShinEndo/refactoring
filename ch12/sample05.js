@@ -1,10 +1,5 @@
 export function createBird(data) {
-	switch(data.type) {
-		case 'NorweigianBlueParrot':
-			return new NorweigianBlueParrot(data);
-		default:
-			return new Bird(data);
-	}
+	return new Bird(data);
 }
 
 class Bird {
