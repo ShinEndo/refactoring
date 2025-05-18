@@ -1,7 +1,5 @@
 export function createBird(data) {
 	switch(data.type) {
-		case 'EuropeanSwallow':
-			return new EuropeanSwallow(data);
 		case 'AfricanSwallow':
 			return new AfricanSwallow(data);
 		case 'NorweigianBlueParrot':
@@ -24,7 +22,7 @@ class Bird {
 		return this._plumage || "average";
 	}
 	get airSpeedVelocity() {
-		return null;
+		return this._speciesDeligate ? this._speciesDeligate.airSpeedVelocity : null;
 	}
 
 	selectSpeciesDelegate(data) {
@@ -34,12 +32,6 @@ class Bird {
 			default:
 				return null; 
 		}
-	}
-}
-
-class EuropeanSwallow extends Bird {
-	get airSpeedVelocity() {
-		return this._speciesDeligate.airSpeedVelocity;
 	}
 }
 
